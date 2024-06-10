@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="assets/img/icone-unicarioca.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Reconhecimento de Placas de Transito</title>
+</head>
+<body>
+    <div id="dashboard">
+        <div id="webcam-container">
+            <div id="video"></div>
+        </div>
+        <div class="container-controle">
+            <div id="painel-velocidades">
+                <div id="velocidadeVeiculo">Velocidade atual do veículo: 0 km/h</div>
+                <div id="velocidadeMaxima">Velocidade máxima lida na placa:</div>
+            </div>
+            <div class="painel-msg">
+                <div id="msg"></div>
+            </div>
+            <div class="controle">
+                <button type="button" id="btn-liga-desliga" class="liga-desliga" onclick="ligarDesligar()">Ligar<br><hr>Desligar</button>
+                <button type="button" id="btn-acelerar" class="acelerar velocidade" onclick="acelerar()">Acelerar</button>
+                <button type="button" id="btn-frear" class="frear velocidade" onclick="frear()">Frear</button>
+            </div>
+            <div id="label-container">
+                <canvas id="prediction-chart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts/controle.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+#dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#webcam-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#video {
+    width: 100%;
+    max-width: 400px;
+    height: 210px; 
+    display: none; /* Inicialmente oculto */
+    border: 5px solid #444;
+    border-radius: 10px;
+}
+
+.container-controle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.painel-velocidades {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#velocidadeVeiculo,
+#velocidadeMaxima {
+    font-size: 1.2em;
+    margin: 5px 0;
+    padding: 10px;
+    background: #444;
+    border-radius: 5px;
+}
+
+.painel-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 50px;
+    background-color: rgb(36, 66, 150);
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.controle {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    margin: 20px 0px;
+}
+
+.liga-desliga, .velocidade {
+    color: #fff;
+    background-color: #555;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 80px;
+    height: 80px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.1s;
+}
+
+.liga-desliga:active,
+.liga-desliga.active,
+.velocidade:active,
+.velocidade.active {
+    transform: scale(0.95);
+    background-color: #777;
+}
+
+#label-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+#prediction-chart {
+    width: 100%;
+    background: #444;
+    padding: 10px;
+    border-radius: 5px;
+}
