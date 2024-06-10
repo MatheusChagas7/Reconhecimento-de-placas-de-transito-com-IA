@@ -31,7 +31,7 @@ async function iniciar() {
         document.getElementById("video").innerHTML = '<p>Webcam não disponível</p>';
     }
 
-    mensagem("Veículo desligado!")
+    mensagem("Veículo desligado! Precione X para ligar o veiculo.")
 
     labelContainer = document.getElementById("label-container");
 
@@ -150,7 +150,7 @@ function tocarAudioAlerta() {
             if (velocidadeAtual > velocidadeMaximaLida) {
                 tocarAudioAlerta(); // Toca o áudio novamente se a condição ainda for verdadeira
             }else{
-                mensagem("Veículo ligado.");
+                mensagem("Veículo ligado! Precione W para acelerar ou S para frear.");
             }
         }, 10000);
     }
@@ -160,11 +160,11 @@ function tocarAudioAlerta() {
 function ligarDesligar() {
     if (veiculoLigado && velocidadeAtual === 0) {
         veiculoLigado = false;
-        mensagem("Veículo desligado.");
+        mensagem("Veículo desligado. Precione X para ligar o veiculo.");
     } else {
         if (velocidadeAtual === 0) {
             veiculoLigado = true;
-            mensagem("Veículo ligado.");
+            mensagem("Veículo ligado! Precione W para acelerar ou S para frear.");
         } else {
             mensagem("Não é possível desligar o veículo com velocidade diferente de 0.");
         }
@@ -178,8 +178,6 @@ function acelerar() {
         velocidadeAtual = Math.min(100, velocidadeAtual + 1);
         atualizarDisplayDeVelocidade();
         verificarVelocidade(); // Verifica se a velocidade atual ultrapassou a velocidade máxima após acelerar
-    } else {
-        mensagem("Veículo está desligado. Não é possível acelerar.");
     }
 }
 
@@ -188,8 +186,6 @@ function frear() {
     if (veiculoLigado) {
         velocidadeAtual = Math.max(0, velocidadeAtual - 1);
         atualizarDisplayDeVelocidade();
-    } else {
-        mensagem("Veículo está desligado. Não é possível frear");
     }
 }
 
